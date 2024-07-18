@@ -1,28 +1,32 @@
 {
-  "name": "strapi-next-typed",
-  "version": "1.0.0",
-  "description": "Strapi Next Typed Frontend",
-  "license": "MIT",
-  "author": "Paul Bratslavsky",
-  "main": "index.js",
+  "name": "backend",
+  "private": true,
+  "version": "0.1.0",
+  "description": "A Strapi application",
   "scripts": {
-    "backend": "yarn dev --prefix ../backend/",
-    "clear": "cd frontend && rm -rf .next && rm -rf cache",
-    "copytypes": "node copyTypes.js",
-    "dev": "yarn clear && concurrently \"cd frontend && yarn dev\" \"cd backend && yarn develop\"",
-    "frontend": "yarn dev --prefix ../frontend/",
-    "repo:upstream": "git fetch upstream && git merge upstream/main",
-    "seed": "cd backend && yarn strapi import -f ../seed-data.tar.gz",
-    "setup": "yarn install && yarn setup:frontend && yarn setup:backend",
-    "setup:backend": "cd backend && yarn",
-    "setup:frontend": "cd frontend && yarn",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "build": "strapi build",
+    "strapi": "strapi"
   },
+  "devDependencies": {},
   "dependencies": {
-    "@strapi/typescript-utils": "^4.25.3",
-    "concurrently": "^8.2.1"
+    "@strapi/plugin-i18n": "4.14.5",
+    "@strapi/plugin-users-permissions": "4.14.5",
+    "@strapi/strapi": "4.14.5",
+    "better-sqlite3": "8.6.0",
+    "pg": "^8.12.0",
+    "render": "^0.1.4"
   },
-  "devDependencies": {
-    "@strapi/strapi": "^4.25.3"
-  }
+  "author": {
+    "name": "A Strapi developer"
+  },
+  "strapi": {
+    "uuid": "888a895e-160d-413e-9ce2-136f78221264"
+  },
+  "engines": {
+    "node": ">=16.0.0 <=20.x.x",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT"
 }
