@@ -10,6 +10,7 @@ module.exports = ({ env }) => ({
       user: env("DATABASE_USER", "postgres.hqvjskjaxswncsfkxhdw"),
       password: env("DATABASE_PASSWORD", "aslancimbom41"),
       ssl: env.bool("DATABASE_SSL", false),
+      idleTimeoutMillis: 30000, // 30 seconds
     },
     useNullAsDefault: true,
   },
